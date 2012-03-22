@@ -1,7 +1,7 @@
-Pact - A Simple CommonJS Promises Implementation
+Bond - A Simple CommonJS Promises Implementation
 ================================================
 
-Pact is a simple implementation of the [Promises/A](http://wiki.commonjs.org/wiki/Promises/A "CommonJS Promises/A Proposal") specification.
+Bond is a simple implementation of the [Promises/A](http://wiki.commonjs.org/wiki/Promises/A "CommonJS Promises/A Proposal") specification.
 
 It allows authors to write promise-compatible methods; which in turn allow users to add multiple functions to call on "success" or "failure" of the original call.
 
@@ -14,7 +14,7 @@ Example
     // or break the promise depending on the
     // 'pass' argument.
     var wait10millis = function(pass) {
-        var dfd = pact.deferred();
+        var dfd = bond.deferred();
         setTimeout(function() {
             if ( pass ) {
                 dfd.resolve();

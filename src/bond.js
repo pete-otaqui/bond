@@ -2,7 +2,7 @@
 
 (function(root, undefined) {
 
-    var pact = {};
+    var bond = {};
 
     var Deferred = function() {
         var dfd,
@@ -84,17 +84,17 @@
         return dfd;
     };
 
-    pact.Deferred = Deferred;
-    pact.deferred = function() {
+    bond.Deferred = Deferred;
+    bond.deferred = function() {
         return new Deferred();
     };
 
     if ( typeof module !== 'undefined' && module.exports ) {
-        module.exports.pact = pact;
+        module.exports.bond = bond;
     } else if ( typeof exports !== 'undefined' ) {
-        exports.pact = pact;
+        exports.bond = bond;
     } else {
-        root.pact = pact;
+        root.bond = bond;
     }
 
 })(this);

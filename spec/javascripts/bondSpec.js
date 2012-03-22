@@ -1,7 +1,7 @@
-describe("pact", function() {
+describe("bond", function() {
     
         var wait10millis = function(pass) {
-            var dfd = pact.deferred();
+            var dfd = bond.deferred();
             setTimeout(function() {
                 resolverVal = pass;
                 if ( pass ) {
