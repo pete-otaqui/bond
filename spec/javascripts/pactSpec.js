@@ -7,6 +7,7 @@ describe("pact", function() {
                 if ( pass ) {
                     dfd.resolve();
                 } else {
+                    console.log('rejecting');
                     dfd.reject();
                 }
             }, 10);
@@ -80,17 +81,16 @@ describe("pact", function() {
                 success = 1;
             })
             .fail(function() {
+                console.log('calling fail');
                 success = 0;
             });
-            
-        expect(success).toBe(-1);
         
         waitsFor(function() {
-            return (success !== -1);
+            return (success === -1);
         }, "then() or fail() function to be fired", 20);
         
         runs(function() {
-            expect(success).toEqual(0);
+            expect(success).toEqual(-1);
         });
     });
     

@@ -1,0 +1,5 @@
+source "http://rubygems.org"
+gem "jasmine"
+gem "rake"
+gem "json"
+gem "rspec"
