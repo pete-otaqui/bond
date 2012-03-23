@@ -7,7 +7,6 @@ describe("bond", function() {
                 if ( pass ) {
                     dfd.resolve();
                 } else {
-                    console.log('rejecting');
                     dfd.reject();
                 }
             }, 10);
@@ -81,16 +80,15 @@ describe("bond", function() {
                 success = 1;
             })
             .fail(function() {
-                console.log('calling fail');
                 success = 0;
             });
         
         waitsFor(function() {
-            return (success === -1);
+            return (success !== -1);
         }, "then() or fail() function to be fired", 20);
         
         runs(function() {
-            expect(success).toEqual(-1);
+            expect(success).toEqual(0);
         });
     });
     
@@ -150,6 +148,60 @@ describe("bond", function() {
             expect(success2).toBeTruthy();
         });
         
+    });
+
+    it("should support multiple arguments for resolution", function() {
+
+        var args = null;
+        var dfd = bond.deferred();
+        var prm = dfd.promise();
+
+        prm.done(function(f, b) {
+            args = arguments;
+        });
+
+        setTimeout(function() {
+            dfd.resolve('foo', 'bar');
+        }, 10);
+        
+        waitsFor(function() {
+            return (args !== null);
+        }, "done() didn't fire", 20);
+        
+        runs(function() {
+            expect(typeof args).toEqual('object');
+            expect(args.length).toEqual(2);
+            expect(args[0]).toEqual('foo');
+            expect(args[1]).toEqual('bar');
+        });
+
+    });
+
+    it("should support multiple arguments for rejection", function() {
+
+        var args = null;
+        var dfd = bond.deferred();
+        var prm = dfd.promise();
+
+        prm.fail(function(f, b) {
+            args = arguments;
+        });
+
+        setTimeout(function() {
+            dfd.reject('foo', 'bar');
+        }, 10);
+        
+        waitsFor(function() {
+            return (args !== null);
+        }, "done() didn't fire", 20);
+        
+        runs(function() {
+            expect(typeof args).toEqual('object');
+            expect(args.length).toEqual(2);
+            expect(args[0]).toEqual('foo');
+            expect(args[1]).toEqual('bar');
+        });
+
     });
     
 });

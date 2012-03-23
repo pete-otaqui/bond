@@ -28,7 +28,6 @@
             fail: function(fn) {
                 if ( typeof fn == 'function' ) {
                     if ( resolved === null ) {
-                        console.log('pushing', fn);
                         failFns.push(fn);
                     } else if ( resolved === false ) {
                         fn.apply(root, resolvedArgs);
@@ -67,7 +66,6 @@
                 resolved = false;
                 resolvedArgs = Array.prototype.slice.call(arguments);
                 failFns.forEach(function(fn) {
-                    console.log('failFn', fn);
                     fn.apply(root, resolvedArgs);
                 });
             },
@@ -85,7 +83,7 @@
     };
 
     bond.Deferred = Deferred;
-    bond.deferred = function() {
+    bond.defer = function() {
         return new Deferred();
     };
 

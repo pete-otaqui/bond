@@ -2,13 +2,13 @@
   "author": "Pete Otaqui <pete@otaqui.com> (http://otaqui.com/)",
   "name": "bond",
   "description": "A minimal Promises A implementation",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "repository": {
     "url": "http://github.com/pete-otaqui/bond.git"
   },
   "main": "src/bond.js",
   "engines": {
-    "node": "~0.6.10"
+    "node": "~0.6"
   },
   "devDependencies": {},
   "optionalDependencies": {},
