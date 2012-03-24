@@ -1,7 +1,7 @@
 describe("bond", function() {
     
         var wait10millis = function(pass) {
-            var dfd = bond.deferred();
+            var dfd = bond.defer();
             setTimeout(function() {
                 resolverVal = pass;
                 if ( pass ) {
@@ -153,7 +153,7 @@ describe("bond", function() {
     it("should support multiple arguments for resolution", function() {
 
         var args = null;
-        var dfd = bond.deferred();
+        var dfd = bond.defer();
         var prm = dfd.promise();
 
         prm.done(function(f, b) {
@@ -180,7 +180,7 @@ describe("bond", function() {
     it("should support multiple arguments for rejection", function() {
 
         var args = null;
-        var dfd = bond.deferred();
+        var dfd = bond.defer();
         var prm = dfd.promise();
 
         prm.fail(function(f, b) {

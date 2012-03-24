@@ -88,9 +88,9 @@
     };
 
     if ( typeof module !== 'undefined' && module.exports ) {
-        module.exports.bond = bond;
+        module.exports = bond;
     } else if ( typeof exports !== 'undefined' ) {
-        exports.bond = bond;
+        exports = bond;
     } else {
         root.bond = bond;
     }

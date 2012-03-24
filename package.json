@@ -2,7 +2,7 @@
   "author": "Pete Otaqui <pete@otaqui.com> (http://otaqui.com/)",
   "name": "bond",
   "description": "A minimal Promises A implementation",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "repository": {
     "url": "http://github.com/pete-otaqui/bond.git"
   },
