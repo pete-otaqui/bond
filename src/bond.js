@@ -43,7 +43,7 @@
                 }
                 return prm;
             },
-            then: function(doneFn, progressFn, failFn) {
+            then: function(doneFn, failFn, progressFn) {
                 prm.done(doneFn);
                 prm.progress(progressFn);
                 prm.fail(failFn);
