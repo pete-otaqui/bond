@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/pete-otaqui/bond.png)](http://travis-ci.org/pete-otaqui/bond)
 Bond - A Simple CommonJS Promises Implementation
 ================================================
 
