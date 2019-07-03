@@ -26,9 +26,10 @@ GEM
     rubyzip (1.2.3)
     selenium-webdriver (2.20.0)
       childprocess (>= 0.2.5)
-      ffi (~> 1.0)
+      ffi (>= 1.9.24)
       multi_json (~> 1.0)
       rubyzip
+
 
 PLATFORMS
   ruby
